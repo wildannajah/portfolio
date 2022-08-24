@@ -1,4 +1,4 @@
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Link, Stack, Typography } from "@mui/material";
 import {
   UilFacebookF,
   UilInstagram,
@@ -10,10 +10,6 @@ export default function Footer() {
   return (
     <Stack marginBottom="3rem" spacing={5}>
       <Stack
-        // display="grid"
-        // gap="3rem"
-        // marginX="1.5rem"
-        // maxWidth="768px"
         justifyContent="space-between"
         direction={{ xs: "column", sm: "row" }}
         spacing={5}
@@ -36,9 +32,27 @@ export default function Footer() {
         </Box>
 
         <Stack direction="row" spacing={2}>
-          <UilFacebookF />
-          <UilInstagram />
-          <UilTwitter />
+          <Link
+            href="https://github.com/wildannajahw"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <UilFacebookF />
+          </Link>
+          <Link
+            href="https://github.com/wildannajahw"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <UilInstagram />
+          </Link>
+          <Link
+            href="https://github.com/wildannajahw"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <UilTwitter />
+          </Link>
         </Stack>
       </Stack>
 
