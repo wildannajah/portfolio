@@ -10,7 +10,13 @@ import typography from "../../theme/typography";
 
 export default function Main() {
   return (
-    <Box display="grid" gap="1rem" marginX="1.5rem" maxWidth="768px">
+    <Box
+      paddingTop="1rem"
+      display="grid"
+      gap="1rem"
+      marginX="1.5rem"
+      maxWidth="768px"
+    >
       <Box
         gridTemplateColumns=".5fr 3fr"
         paddingTop="3.5rem"
@@ -75,6 +81,7 @@ export default function Main() {
           </Typography>
           <Typography
             sx={{
+              fontFamily : "'Poppins', sans-serif",
               color: "text.secondary",
               ...typography.subtitle1,
               marginBottom: "1rem",

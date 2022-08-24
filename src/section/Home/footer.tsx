@@ -8,7 +8,7 @@ import typography from "../../theme/typography";
 
 export default function Footer() {
   return (
-    <Box>
+    <Stack marginBottom="3rem" spacing={5}>
       <Stack
         // display="grid"
         // gap="3rem"
@@ -17,7 +17,6 @@ export default function Footer() {
         justifyContent="space-between"
         direction={{ xs: "column", sm: "row" }}
         spacing={5}
-        marginBottom="3rem"
       >
         <Box>
           <Typography
@@ -52,6 +51,6 @@ export default function Footer() {
       >
         © Wildan. Allright reserved
       </Typography>
-    </Box>
+    </Stack>
   );
 }
