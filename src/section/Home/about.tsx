@@ -2,13 +2,17 @@ import { Box, Button, Typography } from "@mui/material";
 import Image from "next/image";
 import { UilDownloadAlt } from "@iconscout/react-unicons";
 import typography from "../../theme/typography";
+import useResponsive from "../../hooks/useResponsive";
 
 export default function About() {
+
+  // const smUp = useResponsive("up", "sm");
+  const mdUp = useResponsive("up", "md");
   return (
     <Box>
       <Typography
         sx={{
-          ...typography.h3,
+          ...(mdUp ? typography.h2 : typography.h3),
           textAlign: "center",
         }}
       >
@@ -18,7 +22,7 @@ export default function About() {
       <Typography
         sx={{
           color: "text.secondary",
-          ...typography.subtitle2,
+          ...(mdUp ? typography.subtitle1 : typography.subtitle2),
           textAlign: "center",
           marginBottom: "3rem",
         }}
