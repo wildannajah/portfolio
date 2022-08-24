@@ -33,23 +33,26 @@ export default function Footer() {
 
         <Stack direction="row" spacing={2}>
           <Link
-            href="https://github.com/wildannajahw"
+            href="https://www.facebook.com/wildannajahw/"
             target="_blank"
             rel="noreferrer"
+            color="text.primary"
           >
             <UilFacebookF />
           </Link>
           <Link
-            href="https://github.com/wildannajahw"
+            href="https://www.instagram.com/wildannajahw/"
             target="_blank"
             rel="noreferrer"
+            color="text.primary"
           >
             <UilInstagram />
           </Link>
           <Link
-            href="https://github.com/wildannajahw"
+            href="https://twitter.com/wildannajahw"
             target="_blank"
             rel="noreferrer"
+            color="text.primary"
           >
             <UilTwitter />
           </Link>
