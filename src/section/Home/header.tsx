@@ -68,7 +68,6 @@ export default function Header() {
             display: "flex",
             // cursor: "pointer",
           }}
-          onClick={handleScrollTop}
         >
           <Typography
             sx={{
@@ -76,6 +75,7 @@ export default function Header() {
               fontWeight: typography.fontWeightMedium,
               // opacity: smUp ? 0 : "1",
             }}
+            onClick={handleScrollTop}
           >
             Wildan
           </Typography>
