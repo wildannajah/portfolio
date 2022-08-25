@@ -1,18 +1,18 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import { UilDownloadAlt } from "@iconscout/react-unicons";
 import typography from "../../theme/typography";
 import useResponsive from "../../hooks/useResponsive";
+import { MainContainer } from "./main";
 
 export default function About() {
-
-  // const smUp = useResponsive("up", "sm");
+  const smUp = useResponsive("up", "sm");
   const mdUp = useResponsive("up", "md");
   return (
     <Box>
       <Typography
         sx={{
-          ...(mdUp ? typography.h2 : typography.h3),
+          ...(mdUp ? typography.h3 : typography.h4),
           textAlign: "center",
         }}
       >
@@ -24,72 +24,83 @@ export default function About() {
           color: "text.secondary",
           ...(mdUp ? typography.subtitle1 : typography.subtitle2),
           textAlign: "center",
-          marginBottom: "3rem",
+          marginBottom: "2rem",
         }}
       >
         My Introduction
       </Typography>
-      <Box
-        sx={{
-          // display: "grid",
-          // gap: "1.5rem",
-          // maxWidth: "768px",
-          alignItems: "center",
-          display: "flex",
-          justifyContent: "center",
-          margin: "0 1.5rem",
-        }}
-      >
-        <Image
-          src="/img/about.jpg"
-          alt="me"
-          width="200"
-          height="200"
-          style={{
-            borderRadius: ".5rem",
-          }}
-        />
-      </Box>
-
-      <Typography
-        sx={{
-          color: "text.secondary",
-          ...typography.subtitle2,
-          textAlign: "center",
-          margin: "3rem",
-        }}
-      >
-        Web develover, with extensive knowloedge and years of experience,
-        working in web technologies and UI/UX design, delivering quality work.
-      </Typography>
-      <Box
-        sx={{
-          alignItems: "center",
-          display: "flex",
-          justifyContent: "center",
-        }}
-      >
-        <a href="pdf/Wildan-CV.pdf" download>
-          <Button
-            variant="contained"
-            component="span"
-            color="primary"
+      <MainContainer>
+        <Box
+          gridTemplateColumns={smUp ? "1fr 1fr" : "1fr"}
+          // paddingTop="3.5rem"
+          // alignItems="center"
+          display="grid"
+          gap="2rem"
+        >
+          <Box
             sx={{
-              padding: "1rem",
-              // alignItems: "center",
-              // display: "flex",
-              // justifyContent: "center",
+              // display: "grid",
+              // gap: "1.5rem",
+              // maxWidth: "768px",
+              alignItems: "center",
+              display: "flex",
+              justifyContent: "center",
+              margin: "0 1.5rem",
             }}
           >
-            Download CV{" "}
-            <UilDownloadAlt
+            <Image
+              src="/img/about.jpg"
+              alt="me"
+              width={smUp ? "350" : "200"}
+              height={smUp ? "350" : "200"}
               style={{
-                marginLeft: ".5rem",
+                borderRadius: ".5rem",
               }}
             />
-          </Button>
-        </a>
-      </Box>
+          </Box>
+          <Stack spacing={3}>
+            <Typography
+              sx={{
+                color: "text.secondary",
+                ...typography.subtitle2,
+                // margin: "0 3rem 2rem 3rem",
+              }}
+              textAlign={{ xs: "center", sm: "left" }}
+            >
+              Web develover, with extensive knowloedge and years of experience,
+              working in web technologies and UI/UX design, delivering quality
+              work.
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+              }}
+              justifyContent={{ xs: "center", sm: "left" }}
+            >
+              <a href="pdf/Wildan-CV.pdf" download>
+                <Button
+                  variant="contained"
+                  component="span"
+                  color="primary"
+                  sx={{
+                    padding: "1rem",
+                    // alignItems: "center",
+                    // display: "flex",
+                    // justifyContent: "center",
+                  }}
+                >
+                  Download CV{" "}
+                  <UilDownloadAlt
+                    style={{
+                      marginLeft: ".5rem",
+                    }}
+                  />
+                </Button>
+              </a>
+            </Box>
+          </Stack>
+        </Box>
+      </MainContainer>
     </Box>
   );
 }

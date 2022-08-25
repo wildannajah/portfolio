@@ -9,7 +9,7 @@ import {
 import typography from "../../theme/typography";
 import useResponsive from "../../hooks/useResponsive";
 
-const MainContainer = styled("div")(({ theme }) => ({
+export const MainContainer = styled("div")(({ theme }) => ({
   paddingTop: "1rem",
   display: "grid",
   gap: "1rem",
@@ -84,7 +84,7 @@ export default function Main() {
         <Identity>
           <Typography
             sx={{
-              ...(mdUp ? typography.h1 : typography.h2),
+              ...(mdUp ? typography.h2 : typography.h3),
             }}
           >
             Hi, I&apos;m Wildan
