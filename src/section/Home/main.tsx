@@ -27,7 +27,8 @@ export default function Main() {
     <MainContainer>
       <Box
         gridTemplateColumns={smUp ? "max-content 1fr 1fr" : ".5fr 3fr"}
-        paddingTop="3.5rem"
+        paddingTop={smUp ? "5rem" : "3.5rem"}
+        paddingBottom={smUp ? "5rem" : "3.5rem"}
         alignItems="center"
         display="grid"
         gap="1.5rem"

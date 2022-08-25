@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import typography from "../../theme/typography";
 import { dispatch, useSelector } from "../../redux/store";
 import { setTheme } from "../../redux/slice/theme";
+import useResponsive from "../../hooks/useResponsive";
 
 const Navigation = styled("header")(({ theme }) => ({
   width: "100%",
@@ -15,7 +16,7 @@ const Navigation = styled("header")(({ theme }) => ({
   zIndex: 100,
   backgroundColor: theme.palette.background.default,
   [theme.breakpoints.up("sm")]: {
-    display: "none",
+    top: 0,
   },
 }));
 
@@ -23,11 +24,19 @@ export default function Header() {
   const { mode } = useSelector((state) => state.theme);
   const [darkMode, setdarkMode] = useState(mode === "dark");
   const [scroll, setScroll] = useState(false);
+  const smUp = useResponsive("up", "sm");
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setScroll(window.scrollY > 80);
     });
   }, []);
+
+  const handleScrollTop = () => {
+    document.documentElement.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -41,20 +50,27 @@ export default function Header() {
         boxShadow: scroll ? "0 -1px 4px rgba(0, 0, 0, .15)" : "",
       }}
     >
-      <Box>
+      <Box
+        sx={{
+          maxWidth: "768px",
+          marginX: smUp ? "auto" : "1.5rem",
+          paddingX: smUp ? "3rem" : "",
+        }}
+      >
         <Box
           sx={{
-            maxWidth: "768px",
-            marginX: "1.5rem",
             height: "3rem",
             justifyContent: "space-between",
             alignItems: "center",
             display: "flex",
+            cursor: "pointer",
           }}
+          onClick={handleScrollTop}
         >
           <Typography
             sx={{
               fontWeight: typography.fontWeightMedium,
+              // opacity: smUp ? 0 : "1",
             }}
           >
             Wildan
