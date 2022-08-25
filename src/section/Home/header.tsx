@@ -17,6 +17,7 @@ const Navigation = styled("header")(({ theme }) => ({
   backgroundColor: theme.palette.background.default,
   [theme.breakpoints.up("sm")]: {
     top: 0,
+    height: "4rem",
   },
 }));
 
@@ -55,20 +56,23 @@ export default function Header() {
           maxWidth: "768px",
           marginX: smUp ? "auto" : "1.5rem",
           paddingX: smUp ? "3rem" : "",
+          // paddingY: smUp ? "1rem" : "",
+          height: "100%",
         }}
       >
         <Box
           sx={{
-            height: "3rem",
+            height: "100%",
             justifyContent: "space-between",
             alignItems: "center",
             display: "flex",
-            cursor: "pointer",
+            // cursor: "pointer",
           }}
           onClick={handleScrollTop}
         >
           <Typography
             sx={{
+              cursor: "pointer",
               fontWeight: typography.fontWeightMedium,
               // opacity: smUp ? 0 : "1",
             }}
