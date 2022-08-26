@@ -8,6 +8,7 @@ import About from "../section/Home/about";
 import Footer from "../section/Home/footer";
 import Header from "../section/Home/header";
 import Main from "../section/Home/main";
+import Skills from "../section/Home/skills";
 
 const Home: NextPage = function Home() {
   const theme = useTheme();
@@ -22,14 +23,18 @@ const Home: NextPage = function Home() {
         <Header />
         <Main />
       </Section>
-      <Section>
+      <Section title="About Me" subtitle="My Introduction">
         <About />
+      </Section>
+      <Section title="Skills" subtitle="My Technical Skills">
+        <Skills />
       </Section>
       <Section
         sx={{
           marginTop: "2rem",
           padding: "2rem",
           fontSize: "3rem",
+          bottom: 0,
           backgroundColor: theme.palette.background.paper,
         }}
       >

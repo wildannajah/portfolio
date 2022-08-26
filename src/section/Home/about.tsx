@@ -7,28 +7,8 @@ import { MainContainer } from "./main";
 
 export default function About() {
   const smUp = useResponsive("up", "sm");
-  const mdUp = useResponsive("up", "md");
   return (
     <Box>
-      <Typography
-        sx={{
-          ...(mdUp ? typography.h3 : typography.h4),
-          textAlign: "center",
-        }}
-      >
-        {" "}
-        About me
-      </Typography>
-      <Typography
-        sx={{
-          color: "text.secondary",
-          ...(mdUp ? typography.subtitle1 : typography.subtitle2),
-          textAlign: "center",
-          marginBottom: "2rem",
-        }}
-      >
-        My Introduction
-      </Typography>
       <MainContainer>
         <Box
           gridTemplateColumns={smUp ? "1fr 1fr" : "1fr"}
