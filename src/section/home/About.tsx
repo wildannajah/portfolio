@@ -12,17 +12,11 @@ export default function About() {
       <MainContainer>
         <Box
           gridTemplateColumns={smUp ? "1fr 1fr" : "1fr"}
-          // paddingTop="3.5rem"
-          // alignItems="center"
           display="grid"
           gap="2rem"
         >
           <Box
             sx={{
-              // display: "grid",
-              // gap: "1.5rem",
-              // maxWidth: "768px",
-              alignItems: "center",
               display: "flex",
               justifyContent: "center",
               margin: "0 1.5rem",
@@ -43,7 +37,6 @@ export default function About() {
               sx={{
                 color: "text.secondary",
                 ...typography.subtitle2,
-                // margin: "0 3rem 2rem 3rem",
               }}
               textAlign={{ xs: "center", sm: "left" }}
             >
@@ -64,9 +57,6 @@ export default function About() {
                   color="primary"
                   sx={{
                     padding: "1rem",
-                    // alignItems: "center",
-                    // display: "flex",
-                    // justifyContent: "center",
                   }}
                 >
                   Download CV{" "}

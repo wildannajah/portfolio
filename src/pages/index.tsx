@@ -8,6 +8,7 @@ import About from "../section/home/About";
 import Footer from "../section/home/Footer";
 import Header from "../section/home/Header";
 import Main from "../section/home/Main";
+import Qualification from "../section/home/Qualification";
 import Skills from "../section/home/Skills";
 
 const Home: NextPage = function Home() {
@@ -28,6 +29,9 @@ const Home: NextPage = function Home() {
       </Section>
       <Section title="Skills" subtitle="My Technical Skills">
         <Skills />
+      </Section>
+      <Section title="Qualification" subtitle="My personal jurney">
+        <Qualification />
       </Section>
       <Section
         sx={{
