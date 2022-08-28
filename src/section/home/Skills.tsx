@@ -58,12 +58,12 @@ export default function Skills() {
           fluential: 70,
         },
         {
-          name: "PostgreSQL",
-          fluential: 70,
-        },
-        {
           name: "Python",
           fluential: 75,
+        },
+        {
+          name: "SQL",
+          fluential: 70,
         },
       ],
     },
