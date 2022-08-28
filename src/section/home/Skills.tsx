@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import Iconify from "../../component/Iconify";
+import Iconify from "../../components/Iconify";
 import { MainContainer } from "./Main";
 import SubSkills, { SubSkillsProps } from "./SubSkills";
 
