@@ -143,12 +143,12 @@ export default function Skills() {
           fluential: 80,
         },
         {
-          name: "NodeJs",
-          fluential: 70,
-        },
-        {
           name: "Python",
           fluential: 75,
+        },
+        {
+          name: "NodeJs",
+          fluential: 70,
         },
         {
           name: "SQL",
