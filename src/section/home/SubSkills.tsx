@@ -25,7 +25,6 @@ export default function SubSkills({
       onClick={() => setOpen(!open)}
       sx={{
         cursor: "pointer",
-        transition: "10s",
       }}
     >
       <Stack direction="row" justifyContent="space-between" alignItems="center">
