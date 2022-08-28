@@ -23,7 +23,11 @@ export default function Qualification() {
   };
   const tabHeight = "2rem";
   return (
-    <MainContainer>
+    <MainContainer
+      sx={{
+        margin: 0,
+      }}
+    >
       <TabContext value={value}>
         <TabList
           onChange={handleChange}
