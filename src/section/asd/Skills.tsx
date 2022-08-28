@@ -1,7 +1,7 @@
 import { Grid } from "@mui/material";
-import Iconify from "../../components/iconify";
-import { MainContainer } from "./main";
-import SubSkills, { SubSkillsProps } from "./subSkills";
+import Iconify from "../../component/Iconify";
+import { MainContainer } from "./Main";
+import SubSkills, { SubSkillsProps } from "./SubSkills";
 
 export default function Skills() {
   const SkillSet: SubSkillsProps[] = [

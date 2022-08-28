@@ -2,13 +2,13 @@
 import { useTheme } from "@mui/material";
 import type { NextPage } from "next";
 import Head from "next/head";
-import Page from "../components/page";
-import Section from "../components/section";
-import About from "../section/Home/about";
-import Footer from "../section/Home/footer";
-import Header from "../section/Home/header";
-import Main from "../section/Home/main";
-import Skills from "../section/Home/skills";
+import Page from "../component/Page";
+import Section from "../component/Section";
+import About from "../section/asd/About";
+import Footer from "../section/asd/Footer";
+import Header from "../section/asd/Header";
+import Main from "../section/asd/Main";
+import Skills from "../section/asd/Skills";
 
 const Home: NextPage = function Home() {
   const theme = useTheme();

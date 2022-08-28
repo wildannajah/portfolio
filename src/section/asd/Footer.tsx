@@ -5,7 +5,7 @@ import {
   UilTwitter,
 } from "@iconscout/react-unicons";
 import typography from "../../theme/typography";
-import { MainContainer } from "./main";
+import { MainContainer } from "./Main";
 
 export default function Footer() {
   return (

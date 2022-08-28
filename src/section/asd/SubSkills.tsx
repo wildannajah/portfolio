@@ -1,6 +1,6 @@
 import { Box, Collapse, Stack, Typography } from "@mui/material";
 import { ReactNode, useState } from "react";
-import Iconify from "../../components/iconify";
+import Iconify from "../../component/Iconify";
 import typography from "../../theme/typography";
 
 export interface SubSkillsProps {

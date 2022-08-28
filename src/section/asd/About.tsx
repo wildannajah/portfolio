@@ -3,7 +3,7 @@ import Image from "next/image";
 import { UilDownloadAlt } from "@iconscout/react-unicons";
 import typography from "../../theme/typography";
 import useResponsive from "../../hooks/useResponsive";
-import { MainContainer } from "./main";
+import { MainContainer } from "./Main";
 
 export default function About() {
   const smUp = useResponsive("up", "sm");
