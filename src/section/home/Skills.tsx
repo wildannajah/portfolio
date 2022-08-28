@@ -19,12 +19,20 @@ export default function Skills() {
       ),
       skills: [
         {
-          name: "React Js",
-          fluential: 45,
+          name: "HTML",
+          fluential: 90,
         },
         {
-          name: "HTML Js",
-          fluential: 45,
+          name: "CSS",
+          fluential: 80,
+        },
+        {
+          name: "Javascript",
+          fluential: 85,
+        },
+        {
+          name: "ReactJs",
+          fluential: 80,
         },
       ],
     },
@@ -43,11 +51,19 @@ export default function Skills() {
       skills: [
         {
           name: "PHP",
-          fluential: 45,
+          fluential: 80,
+        },
+        {
+          name: "NodeJs",
+          fluential: 70,
+        },
+        {
+          name: "PostgreSQL",
+          fluential: 70,
         },
         {
           name: "Python",
-          fluential: 45,
+          fluential: 75,
         },
       ],
     },

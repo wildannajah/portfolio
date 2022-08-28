@@ -1,6 +1,7 @@
 import { Box, Collapse, Stack, Typography } from "@mui/material";
 import { ReactNode, useState } from "react";
 import Iconify from "../../components/Iconify";
+import useResponsive from "../../hooks/useResponsive";
 import typography from "../../theme/typography";
 
 export interface SubSkillsProps {
@@ -20,11 +21,12 @@ export default function SubSkills({
   skills,
 }: SubSkillsProps) {
   const [open, setOpen] = useState(false);
+  const smUp = useResponsive("up", "sm");
   return (
-    <Stack
+    <Box
       onClick={() => setOpen(!open)}
       sx={{
-        cursor: "pointer",
+        cursor: smUp ? "pointer" : "",
       }}
     >
       <Stack direction="row" justifyContent="space-between" alignItems="center">
@@ -90,6 +92,6 @@ export default function SubSkills({
           ))}
         </Stack>
       </Collapse>
-    </Stack>
+    </Box>
   );
 }
