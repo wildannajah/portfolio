@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/default-param-last */
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { Provider as ReduxProvider } from "react-redux";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
-// import { offsetLimitPagination } from "@apollo/client/utilities";
 import { store } from "../redux/store";
 import ThemeProvider from "../theme";
+// import offsetLimitPagination from "../utils/offsetLimitPagination";
 
 const client = new ApolloClient({
   uri: "https://graphql-pokemon2.vercel.app/",
@@ -12,7 +13,11 @@ const client = new ApolloClient({
     typePolicies: {
       Query: {
         fields: {
-          // pokemons: offsetLimitPagination(),
+          pokemons: {
+            merge(existing = [], incoming) {
+              return [...existing, ...incoming];
+            },
+          },
         },
       },
     },

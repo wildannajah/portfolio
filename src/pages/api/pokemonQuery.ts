@@ -4,10 +4,9 @@ export const GET_POKEMONS = gql`
   query pokemons($first: Int!) {
     pokemons(first: $first) {
       id
-      number
       name
       types
-      image
+      number
     }
   }
 `;
@@ -33,7 +32,44 @@ export const GET_POKEMON = gql`
       fleeRate
       maxCP
       maxHP
-      image
     }
   }
 `;
+
+export interface FastAttack {
+  fast: {
+    name: string;
+  };
+}
+export interface SpecialAttack {
+  special: {
+    name: string;
+  };
+}
+export interface Attack {
+  fast: FastAttack[];
+  special: SpecialAttack[];
+}
+
+export interface Pokemon {
+  id: number;
+  name: string;
+  number: string;
+  weight?: {
+    minimum: string;
+    maximum: string;
+  };
+  classification?: string;
+  types: string[];
+  resistant?: string | string[];
+  attack?: Attack;
+  weakness?: string | string[];
+}
+
+export interface PokemonList {
+  pokemons: Pokemon[];
+}
+export interface PokemonVars {
+  first?: number;
+  name?: string;
+}

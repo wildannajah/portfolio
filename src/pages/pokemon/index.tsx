@@ -1,29 +1,64 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { NetworkStatus, useQuery } from "@apollo/client";
+import { Box, Button } from "@mui/material";
+import { useState } from "react";
 import Page from "../../components/pokemon/Page";
-import { GET_POKEMONS } from "../api/pokemonQuery";
+import List from "../../section/pokemon/List";
+import { GET_POKEMONS, PokemonList, PokemonVars } from "../api/pokemonQuery";
 
 export default function Pokemon() {
-  const { data, fetchMore, error, networkStatus } = useQuery(GET_POKEMONS, {
+  const first = 10;
+  const { data, fetchMore, error, networkStatus } = useQuery<
+    PokemonList,
+    PokemonVars
+  >(GET_POKEMONS, {
     notifyOnNetworkStatusChange: true,
     variables: {
-      first: 20,
+      first,
     },
   });
+  const [offset, setOffset] = useState(10);
+  const fetchNext = () => {
+    setOffset(offset + 10);
+    try {
+      fetchMore({
+        variables: {
+          first: first + offset,
+        },
+        updateQuery: (prevResult, { fetchMoreResult }) => {
+          if (!fetchMoreResult) return prevResult;
+
+          const merged = fetchMoreResult.pokemons.slice(
+            prevResult.pokemons.length
+          );
+          return {
+            pokemons: [
+              ...fetchMoreResult.pokemons.slice(prevResult.pokemons.length),
+            ],
+          };
+        },
+      });
+    } catch (__) {
+      // eslint-disable-next-line no-console
+      console.log(error);
+    }
+  };
 
   const { pokemons } = data || {};
   // const { results, nextOffset } = pokemons || {};
   // const hasMore = (nextOffset || -1) > 0;
+  // console.log(pokemons);
 
   const loadingFirstTime = networkStatus === NetworkStatus.loading;
   const loadingFetchMore = networkStatus === NetworkStatus.fetchMore;
-  console.log(pokemons);
   return (
     <Page>
-      {pokemons?.map(({ name }: any) => {
-        console.log();
-        return <div key={name}>{name}</div>;
-      })}
+      <div>{pokemons?.length && <List data={pokemons} />}</div>
+      <Box textAlign="center" padding={2}>
+        <Button variant="contained" onClick={fetchNext}>
+          Load More
+        </Button>
+      </Box>
     </Page>
   );
 }
