@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Stack, styled, Typography } from "@mui/material";
 import { Pokemon } from "../../pages/api/pokemonQuery";
+import BadgeType from "./BadgeType";
 
 export const Card = styled("div")(({ theme }) => ({
   position: "relative",
@@ -54,40 +55,7 @@ export default function PokeCard({ number, name, types }: Pokemon) {
       >
         <Typography color="#fff">{name}</Typography>
 
-        <Stack spacing={1} direction="row">
-          {types.map((type) => {
-            const srcImg = `/assets/${type.toLocaleLowerCase()}.svg`;
-            return (
-              <Stack
-                key={type}
-                direction="row"
-                sx={{
-                  backgroundColor: `pokemon.type.${type.toLocaleLowerCase()}`,
-                  padding: "0.25rem",
-                  borderRadius: "0.25rem",
-                }}
-              >
-                <img
-                  src={srcImg}
-                  alt=""
-                  color="#fff"
-                  width="15px"
-                  style={{
-                    marginRight: "0.25rem",
-                  }}
-                />
-                <Typography
-                  variant="body2"
-                  color="#fff"
-                  key={type.toLocaleLowerCase()}
-                  textTransform="capitalize"
-                >
-                  {type}
-                </Typography>
-              </Stack>
-            );
-          })}
-        </Stack>
+        <BadgeType types={types} />
       </Stack>
     </Card>
   );

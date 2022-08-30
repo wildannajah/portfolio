@@ -69,6 +69,9 @@ export interface Pokemon {
 export interface PokemonList {
   pokemons: Pokemon[];
 }
+export interface PokemonDetail {
+  pokemon: Pokemon;
+}
 export interface PokemonVars {
   first?: number;
   id?: string | string[];
