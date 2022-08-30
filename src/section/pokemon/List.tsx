@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Box, Card } from "@mui/material";
@@ -11,7 +12,11 @@ interface ListProps {
 }
 export default function List({ data }: ListProps) {
   // eslint-disable-next-line react/no-unstable-nested-components
-  const CustomComponent = forwardRef((props, ref) => <div />);
+  const CustomComponent = forwardRef(
+    ({ id, name, number, types }: Pokemon, ref) => (
+      <PokeCard id={id} name={name} number={number} types={types} />
+    )
+  );
   return (
     <div>
       {data?.map(({ id, name, number, types }) => {
@@ -20,11 +25,16 @@ export default function List({ data }: ListProps) {
         return (
           <Link
             key={id}
-            href={`http://localhost:3000/pokemon/encodeURIComponent${encodeURIComponent(
-              id
-            )}`}
+            href={`http://localhost:3000/pokemon/${encodeURIComponent(id)}`}
           >
-            <PokeCard id={id} name={name} number={number} types={types} />
+            <a>
+              <CustomComponent
+                id={id}
+                name={name}
+                number={number}
+                types={types}
+              />
+            </a>
           </Link>
         );
       })}

@@ -55,7 +55,7 @@ export default function Pokemon() {
     <Page>
       <div>{pokemons?.length && <List data={pokemons} />}</div>
       <Box textAlign="center" padding={2}>
-        <Button variant="contained" onClick={fetchNext}>
+        <Button variant="outlined" onClick={fetchNext}>
           Load More
         </Button>
       </Box>

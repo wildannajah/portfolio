@@ -15,6 +15,6 @@ export default function PokemonDetail() {
       id,
     },
   });
-  console.log(id);
+  console.log(data);
   return <p>{id}</p>;
 }
