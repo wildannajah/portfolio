@@ -71,5 +71,5 @@ export interface PokemonList {
 }
 export interface PokemonVars {
   first?: number;
-  name?: string;
+  id?: string | string[];
 }

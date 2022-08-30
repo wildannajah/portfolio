@@ -36,6 +36,16 @@ export default function PokeCard({ number, name, types }: Pokemon) {
           height: "100px",
         }}
       />
+      <img
+        src="/assets/pokeBG.svg"
+        alt=""
+        style={{
+          position: "absolute",
+          right: 0,
+          bottom: 0,
+          height: "100px",
+        }}
+      />
       <Stack
         spacing={1}
         sx={{
