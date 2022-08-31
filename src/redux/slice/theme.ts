@@ -6,7 +6,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { dispatch } from "../store";
 
 const initialState = {
-  mode: "dark",
+  mode: "light",
 };
 
 const slice = createSlice({

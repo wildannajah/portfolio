@@ -43,3 +43,29 @@ export default function BadgeType({ types }: BadgeTypeProps) {
     </Stack>
   );
 }
+
+export function BadgeOnly({ types }: BadgeTypeProps) {
+  return (
+    <Stack spacing={1} direction="row">
+      {types?.map((type: string) => {
+        const srcImg = `/assets/${type.toLocaleLowerCase()}.svg`;
+        return (
+          <Stack
+            key={type}
+            direction="row"
+            justifyContent="center"
+            sx={{
+              backgroundColor: `pokemon.type.${type.toLocaleLowerCase()}`,
+              padding: "0.25rem",
+              borderRadius: "0.25rem",
+              width: "30px",
+              height: "30px",
+            }}
+          >
+            <img src={srcImg} alt="" color="#fff" width="15px" height="15px" />
+          </Stack>
+        );
+      })}
+    </Stack>
+  );
+}

@@ -32,19 +32,23 @@ export const GET_POKEMON = gql`
       fleeRate
       maxCP
       maxHP
+      attacks {
+        fast {
+          name
+        }
+        special {
+          name
+        }
+      }
     }
   }
 `;
 
 export interface FastAttack {
-  fast: {
-    name: string;
-  };
+  name: string;
 }
 export interface SpecialAttack {
-  special: {
-    name: string;
-  };
+  name: string;
 }
 export interface Attack {
   fast: FastAttack[];
@@ -59,11 +63,15 @@ export interface Pokemon {
     minimum: string;
     maximum: string;
   };
+  height?: {
+    minimum: string;
+    maximum: string;
+  };
   classification?: string;
   types: string[];
   resistant?: string | string[];
-  attack?: Attack;
-  weakness?: string | string[];
+  attacks?: Attack;
+  weaknesses?: string[];
 }
 
 export interface PokemonList {

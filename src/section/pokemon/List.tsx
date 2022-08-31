@@ -25,7 +25,11 @@ export default function List({ data }: ListProps) {
         return (
           <Link
             key={id}
-            href={`http://localhost:3000/pokemon/${encodeURIComponent(id)}`}
+            // href={`http://localhost:3000/pokemon/${encodeURIComponent(id)}`}
+            href={{
+              pathname: "/pokemon/[id]",
+              query: { id, name, number, bgc: types[0] },
+            }}
           >
             <a>
               <CustomComponent

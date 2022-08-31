@@ -52,13 +52,24 @@ export default function Pokemon() {
   const loadingFirstTime = networkStatus === NetworkStatus.loading;
   const loadingFetchMore = networkStatus === NetworkStatus.fetchMore;
   return (
-    <Page>
-      <div>{pokemons?.length && <List data={pokemons} />}</div>
-      <Box textAlign="center" padding={2}>
-        <Button variant="outlined" onClick={fetchNext}>
-          Load More
-        </Button>
-      </Box>
-    </Page>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <Page
+        sx={{
+          width: "100%",
+        }}
+      >
+        <div>{pokemons?.length && <List data={pokemons} />}</div>
+        <Box textAlign="center" padding={2}>
+          <Button variant="outlined" onClick={fetchNext}>
+            Load More
+          </Button>
+        </Box>
+      </Page>
+    </Box>
   );
 }
