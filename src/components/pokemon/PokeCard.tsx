@@ -20,10 +20,7 @@ export default function PokeCard({ number, name, types }: Pokemon) {
       }}
     >
       <img
-        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${parseInt(
-          number,
-          10
-        )}.png`}
+        src="/assets/pokeBG.svg"
         alt=""
         style={{
           position: "absolute",
@@ -33,7 +30,10 @@ export default function PokeCard({ number, name, types }: Pokemon) {
         }}
       />
       <img
-        src="/assets/pokeBG.svg"
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${parseInt(
+          number,
+          10
+        )}.png`}
         alt=""
         style={{
           position: "absolute",
