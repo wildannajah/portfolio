@@ -10,11 +10,6 @@ export const Card = styled("div")(({ theme }) => ({
   display: "flex",
   flexDirection: "column",
   minHeight: "100px",
-  margin: "2rem 0",
-
-  // [theme.breakpoints.up("md")]: {
-  //   margin: "0 auto",
-  // },
 }));
 
 export default function PokeCard({ number, name, types }: Pokemon) {

@@ -5,6 +5,7 @@ import { Box, Card } from "@mui/material";
 import Link from "next/link";
 import { forwardRef } from "react";
 import PokeCard from "../../components/pokemon/PokeCard";
+import useResponsive from "../../hooks/useResponsive";
 import { Pokemon } from "../../pages/api/pokemonQuery";
 
 interface ListProps {
@@ -17,15 +18,21 @@ export default function List({ data }: ListProps) {
       <PokeCard id={id} name={name} number={number} types={types} />
     )
   );
+  const smUp = useResponsive("up", "sm");
   return (
-    <div>
+    <Box
+      gridTemplateColumns={smUp ? "1fr 1fr" : "1fr"}
+      alignItems="center"
+      display="grid"
+      gap="1.5rem"
+      paddingTop={smUp ? "5rem" : "3.5rem"}
+    >
       {data?.map(({ id, name, number, types }) => {
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
         let props;
         return (
           <Link
             key={id}
-            // href={`http://localhost:3000/pokemon/${encodeURIComponent(id)}`}
             href={{
               pathname: "/pokemon/[id]",
               query: { id, name, number, bgc: types[0] },
@@ -42,6 +49,6 @@ export default function List({ data }: ListProps) {
           </Link>
         );
       })}
-    </div>
+    </Box>
   );
 }
