@@ -83,7 +83,9 @@ export default function PokemonDetails() {
               }}
             />
             <Stack justifyContent="center">
-              <Typography variant="h3">{name} </Typography>
+              <Typography variant="h3" color="#fff">
+                {name}{" "}
+              </Typography>
               <BadgeType types={types} />
             </Stack>
           </Stack>
@@ -122,10 +124,10 @@ export default function PokemonDetails() {
             <Stack spacing={1}>
               {pokedexData.map(({ text, value }) => (
                 <Grid container key={text}>
-                  <Grid item xs={4} direction="row">
+                  <Grid item xs={4}>
                     <Typography>{text}</Typography>
                   </Grid>
-                  <Grid item xs={8} direction="row">
+                  <Grid item xs={8}>
                     <Typography>{value}</Typography>
                   </Grid>
                 </Grid>
@@ -138,24 +140,24 @@ export default function PokemonDetails() {
             </Typography>
             <Stack spacing={1}>
               <Grid container>
-                <Grid item xs={4} direction="row">
+                <Grid item xs={4}>
                   <Typography>Fast Attack</Typography>
                 </Grid>
                 <Stack>
                   {fast?.map((FastAttack) => (
-                    <div>{FastAttack.name}</div>
+                    <div key={FastAttack.name}>{FastAttack.name}</div>
                   ))}
                 </Stack>
               </Grid>
             </Stack>
             <Stack spacing={1}>
               <Grid container>
-                <Grid item xs={4} direction="row">
+                <Grid item xs={4}>
                   <Typography>Sp. Attack</Typography>
                 </Grid>
                 <Stack>
                   {special?.map((FastAttack) => (
-                    <div>{FastAttack.name}</div>
+                    <div key={FastAttack.name}>{FastAttack.name}</div>
                   ))}
                 </Stack>
               </Grid>
